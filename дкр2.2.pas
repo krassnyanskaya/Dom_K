@@ -1,21 +1,18 @@
-﻿var i, n, mysign, nsign: integer;
+﻿var n, mysign, nsign: integer;
    ismon: boolean;
    a: array of integer;
 const
   alfabet = ['а','б','в','г','д','е','ё','ж','з','и','й','к','л','м','н','о','п','р','с','т','у','ф','х','ц','ч','ш','щ','ъ','ы','ь','э','ю','я'];
 var
   strn: string;
-  sim: integer;
-  w: integer;
   flagletter: boolean;
 begin
-  writeln('Введите строку: ');
-  Readln(strn);
+  strn:=ReadString('Введите строку: ');
   strn:= strn + ' ';
-  sim:= 0; 
-  w:= 0;
+  var sim:= 0; 
+  var w:= 0;
   flagletter:= false;
-  for i:= 1 to Length(strn) do
+  for var i:= 1 to Length(strn) do
     begin
       if strn[i] in alfabet then
         begin
@@ -28,7 +25,6 @@ begin
              flagletter:= false;
            end;
         end;
-  writeln('Количество букв в строке: ',sim);
-  writeln('Количество слов в строке: ',w);
-  readln;
+  println('Количество букв в строке: ',sim);
+  println('Количество слов в строке: ',w);
 end.
